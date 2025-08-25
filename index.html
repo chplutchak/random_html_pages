@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTAK Workflow Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 900px;
+            width: 100%;
+            color: #333;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3em;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .description {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .system-overview {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .overview-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c5aa0;
+            text-align: center;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .overview-stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .nav-card {
+            background: #f8f9fa;
+            border: 3px solid #e9ecef;
+            border-radius: 15px;
+            padding: 30px;
+            flex: 1;
+            min-width: 320px;
+            max-width: 400px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            border-color: #2c5aa0;
+            box-shadow: 0 15px 30px rgba(44, 90, 160, 0.2);
+        }
+
+        .nav-card.abm {
+            border-left: 5px solid #2c5aa0;
+        }
+
+        .nav-card.cs {
+            border-left: 5px solid #764ba2;
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .card-description {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            list-style: none;
+            text-align: left;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .card-features li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .instructions {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+                margin: 10px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-card {
+                max-width: 100%;
+                min-width: 280px;
+            }
+            
+            .logo {
+                font-size: 2.2em;
+            }
+            
+            .overview-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">UTAK</div>
+        <div class="subtitle">Workflow Management Systems</div>
+        
+        <div class="description">
+            Comprehensive automation solutions for revenue-based account management and customer service operations.
+        </div>
+
+        <div class="system-overview">
+            <div class="overview-title">System Overview</div>
+            <div class="overview-grid">
+                <div class="overview-stat">
+                    <div class="stat-number">118</div>
+                    <div class="stat-label">Managed Accounts</div>
+                </div>
+                <div class="overview-stat">
+                    <div class="stat-number">$7.2M</div>
+                    <div class="stat-label">Portfolio Value</div>
+                </div>
+                <div class="overview-stat">
+                    <div class="stat-number">15%</div>
+                    <div class="stat-label">Growth Target</div>
+                </div>
+                <div class="overview-stat">
+                    <div class="stat-number">4 wks</div>
+                    <div class="stat-label">Implementation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="workflow_implementation.html" class="nav-card abm">
+                <div class="card-icon">📊</div>
+                <div class="card-title">ABM Workflow System</div>
+                <div class="card-description">
+                    Revenue-based account management with automated lead qualification and tier-specific customer journey workflows.
+                </div>
+                <ul class="card-features">
+                    <li>Lead qualification & filtering</li>
+                    <li>Revenue-based account tiering</li>
+                    <li>Proactive account health monitoring</li>
+                    <li>QBR scheduling automation</li>
+                    <li>Growth tracking & reporting</li>
+                </ul>
+            </a>
+
+            <a href="workflow_implementation_cs.html" class="nav-card cs">
+                <div class="card-icon">🎧</div>
+                <div class="card-title">Customer Service Integration</div>
+                <div class="card-description">
+                    Intelligent ticket routing and tier-based support levels integrated with the ABM system for optimal customer experience.
+                </div>
+                <ul class="card-features">
+                    <li>Intelligent ticket routing</li>
+                    <li>Tier-based service levels</li>
+                    <li>Order management automation</li>
+                    <li>Complaint escalation protocols</li>
+                    <li>ABM system integration</li>
+                </ul>
+            </a>
+        </div>
+
+        <div class="instructions">
+            <strong>Instructions:</strong> This index page provides an overview of both workflow systems. 
+            Click on either card above to view the detailed interactive workflow diagrams. 
+            You'll need to save the other two workflow pages as "abm-workflow.html" and "customer-service.html" 
+            in the same folder as this index page for the navigation to work properly.
+        </div>
+    </div>
+</body>
+</html>
